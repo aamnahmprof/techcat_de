@@ -39,4 +39,4 @@
 3. **Historic Data Storage**: Metadata is stored permanently in the Glue Catalog, so lifetime policies can be used to transition older files to lower-cost storage without making the data unavailable
 
 ### Architecture Diagram
-![Architecture Diagram](https://github.com/aamnahmprof/techcat_de/blob/main/S3_Snowpipe/S3%20and%20Snowpipe.drawio%20(1).png)
+![Architecture Diagram]()
