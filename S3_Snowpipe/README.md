@@ -18,19 +18,19 @@
 2. When to use `put_object`:
    * `put_object` should be used for smaller files and when more strict configurations are needed, as the method has many parameters available to be customized as needed. It should also be used when uploading un-structured objects without converting them first.
 3. Comparison of `download_file`, `download_fileobj`, and `get_object`:
-   * `get_object` and `download_fileobj` work 
-5. When to use `Get_object`:
+   * `download_file` and `download_fileobj` each download files and have automated multipart handling, but do have different specific purposes. `download_file` will just take the desired file and write it to a local, given path. `download_fileobj` writes to file-like objects that can be used for in memory processing. On the other hand, `get_object` is ideal for smaller objects and is best suited for getting metadata and an in-memory stream for processing.
+4. When to use `Get_object`:
    * `get_object` should be used when retrieving objects without needing or wanting a structured format. This allows for more direct file processing.
-7. How multipart uploads and downloads enhance the performance of file transfer operations:
-   * 
-9. Limitations of using `put_object` and `get_object` for large files:
+5. How multipart uploads and downloads enhance the performance of file transfer operations:
+   * Multipart uploads and downloads allow a large file to be processed in smaller chunks simultaneously. It also allows for termination, pausing, and resumation of any chunk - so, if something goes wrong with one section of data, it does not affect the entire file. The parallel nature of this significantly speeds up upload/download efficiency in various ways.
+6. Limitations of using `put_object` and `get_object` for large files:
    * `put_obect` and `get_object` do not support large files
-10. Upload method to use when uploading a large video file to S3 and why:
+7. Upload method to use when uploading a large video file to S3 and why:
     * `put_object` does not handle large files or use multipart handling, while both `upload_file` and `upload_fileobj` do. They work with different datastreams, so the storage location of the file determines which of the two methods should be used:
         * `upload_file` if stored locally
         * `upload_fileobj` if stored in-memory
-11. Download method to use to process data in memory before saving it locally:
-    * 
+8. Download method to use to process data in memory before saving it locally:
+    * `download_fileobj`
 
 ## Bringing it Together
 ### Use Cases
