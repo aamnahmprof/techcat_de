@@ -14,7 +14,7 @@ This repository contains my in-class projects from the 2025 Data Engineering sec
   * Bedrock
   * S3
   * PartyRock
-* Python
+* Pythonbu
   * Pandas
   * PySpark
 * SQL
